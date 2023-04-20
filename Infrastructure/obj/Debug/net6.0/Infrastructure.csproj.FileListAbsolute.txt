@@ -1,0 +1,17 @@
+/Users/andersonchang/Projects/WebApi/Infrastructure/obj/Debug/net6.0/Infrastructure.csproj.AssemblyReference.cache
+/Users/andersonchang/Projects/WebApi/Infrastructure/obj/Debug/net6.0/Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/andersonchang/Projects/WebApi/Infrastructure/obj/Debug/net6.0/Infrastructure.AssemblyInfoInputs.cache
+/Users/andersonchang/Projects/WebApi/Infrastructure/obj/Debug/net6.0/Infrastructure.AssemblyInfo.cs
+/Users/andersonchang/Projects/WebApi/Infrastructure/obj/Debug/net6.0/Infrastructure.csproj.CoreCompileInputs.cache
+/Users/andersonchang/Projects/WebApi/Infrastructure/bin/Debug/net6.0/Infrastructure.deps.json
+/Users/andersonchang/Projects/WebApi/Infrastructure/bin/Debug/net6.0/Infrastructure.runtimeconfig.json
+/Users/andersonchang/Projects/WebApi/Infrastructure/bin/Debug/net6.0/Infrastructure.dll
+/Users/andersonchang/Projects/WebApi/Infrastructure/bin/Debug/net6.0/Infrastructure.pdb
+/Users/andersonchang/Projects/WebApi/Infrastructure/bin/Debug/net6.0/ApplicationCore.dll
+/Users/andersonchang/Projects/WebApi/Infrastructure/bin/Debug/net6.0/ApplicationCore.pdb
+/Users/andersonchang/Projects/WebApi/Infrastructure/obj/Debug/net6.0/Infrastructure.csproj.CopyComplete
+/Users/andersonchang/Projects/WebApi/Infrastructure/obj/Debug/net6.0/Infrastructure.dll
+/Users/andersonchang/Projects/WebApi/Infrastructure/obj/Debug/net6.0/refint/Infrastructure.dll
+/Users/andersonchang/Projects/WebApi/Infrastructure/obj/Debug/net6.0/Infrastructure.pdb
+/Users/andersonchang/Projects/WebApi/Infrastructure/obj/Debug/net6.0/Infrastructure.genruntimeconfig.cache
+/Users/andersonchang/Projects/WebApi/Infrastructure/obj/Debug/net6.0/ref/Infrastructure.dll
