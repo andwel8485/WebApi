@@ -20,35 +20,53 @@ namespace WebApi.Utilities
             _next = next;
         }
 
-        public Task Invoke(HttpContext httpContext)
+        public async Task Invoke(HttpContext httpContext)
         {
+            try
+            {
+                await _next(httpContext);
+            }
 
-            return _next(httpContext);
+            catch (Exception e)
+            {
+                await HandleExceptionAsync(httpContext, e);
+            } 
+        }
+        private async Task HandleExceptionAsync(HttpContext context, Exception e)
+        {
+            context.Response.ContentType = "application/json";
+            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+            await context.Response.WriteAsync(new ErrorDetails()
+            {
+                StatusCode = context.Response.StatusCode,
+                Message = "Internal Server Error from the custom middleware."
+            }.ToString());
         }
     }
 
     // Extension method used to add the middleware to the HTTP request pipeline.
     public static class ExceptionMiddlewareExtensionExtensions
     {
-        public static void UseMiddlewareExtension(this IApplicationBuilder builder)
+        public static void UseMiddlewareExtension(this WebApplication app)
         {
-            builder.UseExceptionHandler(appError =>
-            {
-                appError.Run(async context =>
-                {
-                    context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-                    context.Response.ContentType = "application/json";
-                    var contextFeature = context.Features.Get<IExceptionHandlerFeature>();
-                    if (contextFeature != null)
-                    {
-                        await context.Response.WriteAsync(new ErrorDetails()
-                        {
-                            StatusCode = context.Response.StatusCode,
-                            Message = "Internal Sever Error."
-                        }.ToString());
-                    }
-                });
-            });
+            app.UseMiddleware<ExceptionMiddlewareExtension>();
+            //app.UseExceptionHandler(appError =>
+            //{
+            //    appError.Run(async context =>
+            //    {
+            //        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+            //        context.Response.ContentType = "application/json";
+            //        var contextFeature = context.Features.Get<IExceptionHandlerFeature>();
+            //        if (contextFeature != null)
+            //        {
+            //            await context.Response.WriteAsync(new ErrorDetails()
+            //            {
+            //                StatusCode = context.Response.StatusCode,
+            //                Message = "Internal Sever Error."
+            //            }.ToString());
+            //        }
+            //    });
+            //});
             
             
             //return builder.UseMiddleware<ExceptionMiddlewareExtension>();

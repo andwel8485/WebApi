@@ -27,6 +27,7 @@ namespace WebApi.Controllers
         {
            
             List<JobCategory> jobCategories = _js.GetAllJobCategory().ToList();
+            //throw new AccessViolationException("Violation Exception while accessing the resource.");
             return Ok(jobCategories);
             
             
